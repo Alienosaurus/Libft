@@ -6,7 +6,7 @@
 /*   By: adenece <adenece@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 19:03:50 by adenece           #+#    #+#             */
-/*   Updated: 2016/04/09 21:45:04 by adenece          ###   ########.fr       */
+/*   Updated: 2016/04/09 22:19:51 by adenece          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 int					ft_iswhitespace(char c);
+void				ft_exit(int mode);
+void				ft_usage(char *name, char *usage);
+void				ft_putcstr(char *str, char c, int size, char pos);
 
 typedef struct		s_list
 {
