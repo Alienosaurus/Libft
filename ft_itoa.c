@@ -6,45 +6,46 @@
 /*   By: adenece <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 09:42:22 by adenece           #+#    #+#             */
-/*   Updated: 2016/02/23 09:42:28 by adenece          ###   ########.fr       */
+/*   Updated: 2016/04/12 15:35:09 by adenece          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_nbrchar(char *nbr, int n, int i)
+static void	itoa_isnegative(int *n, int *negative)
 {
-	while (n)
+	if (*n < 0)
 	{
-		nbr[i] = '0' - (n % 10);
-		n = n / 10;
-		i--;
+		*n *= -1;
+		*negative = 1;
 	}
-	return (nbr);
 }
 
-char			*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	int			m;
-	int			i;
-	char		*nbr;
+	int		tmpn;
+	int		len;
+	int		negative;
+	char	*str;
 
-	i = -1;
-	m = n;
-	while (m)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	tmpn = n;
+	len = 2;
+	negative = 0;
+	itoa_isnegative(&n, &negative);
+	while (tmpn /= 10)
+		len++;
+	len += negative;
+	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
+		return (NULL);
+	str[--len] = '\0';
+	while (len--)
 	{
-		m = m / 10;
-		i++;
+		str[len] = n % 10 + '0';
+		n = n / 10;
 	}
-	if (n <= 0)
-		i++;
-	nbr = ft_strnew(i + 2);
-	nbr[i + 1] = '\0';
-	if (n < 0)
-		nbr[0] = '-';
-	if (n > 0)
-		n = -n;
-	if (!n)
-		nbr[0] = '0';
-	return (ft_nbrchar(nbr, n, i));
+	if (negative)
+		str[0] = '-';
+	return (str);
 }

@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_status.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adenece <adenece@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adenece <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/24 18:51:25 by adenece           #+#    #+#             */
-/*   Updated: 2016/04/12 13:39:21 by adenece          ###   ########.fr       */
+/*   Created: 2016/04/12 13:40:16 by adenece           #+#    #+#             */
+/*   Updated: 2016/04/12 13:40:19 by adenece          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int		ft_status(int value)
 {
-	unsigned int	i;
-	char			*new;
+	static int	status = 0;
 
-	i = 0;
-	new = ft_strnew(ft_strlen(s));
-	if (new == NULL)
-		return (new);
-	ft_strcpy(new, s);
-	while (new[i])
+	if (value)
 	{
-		new[i] = f(i, new[i]);
-		i++;
+		status = value;
+		return (1);
 	}
-	return (new);
+	return (status);
 }

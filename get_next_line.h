@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adenece <adenece@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adenece <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/24 17:40:31 by adenece           #+#    #+#             */
-/*   Updated: 2016/04/12 15:53:24 by adenece          ###   ########.fr       */
+/*   Created: 2016/05/06 14:10:29 by adenece           #+#    #+#             */
+/*   Updated: 2016/05/26 15:04:44 by adenece          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 32
+# include "./libft/libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	while (n-- > 0)
-	{
-		if ((unsigned char)c == *((unsigned char *)s))
-			return ((void *)s);
-		s++;
-	}
-	return (NULL);
-}
+int		get_next_line(int fd, char **line);
+
+#endif

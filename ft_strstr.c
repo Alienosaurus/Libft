@@ -6,7 +6,7 @@
 /*   By: adenece <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 10:58:34 by adenece           #+#    #+#             */
-/*   Updated: 2016/02/23 10:58:38 by adenece          ###   ########.fr       */
+/*   Updated: 2016/04/12 16:18:32 by adenece          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char			*ft_strstr(const char *haystack, const char *needle)
 {
 	size_t		i;
 
-	if (!needle || !(*needle))
+	if (needle[0] == '\0')
 		return ((char *)haystack);
 	while (*haystack)
 	{

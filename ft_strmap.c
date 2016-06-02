@@ -6,7 +6,7 @@
 /*   By: adenece <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 09:47:24 by adenece           #+#    #+#             */
-/*   Updated: 2016/04/09 22:13:02 by adenece          ###   ########.fr       */
+/*   Updated: 2016/04/12 13:39:09 by adenece          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char				*ft_strmap(char const *s, char (*f)(char))
 
 	i = 0;
 	new = ft_strnew(ft_strlen(s));
+	if (new == NULL)
+		return (new);
 	ft_strcpy(new, s);
 	while (new[i])
 	{

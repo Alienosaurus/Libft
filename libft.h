@@ -6,18 +6,21 @@
 /*   By: adenece <adenece@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/24 19:03:50 by adenece           #+#    #+#             */
-/*   Updated: 2016/04/09 22:19:51 by adenece          ###   ########.fr       */
+/*   Updated: 2016/06/02 14:19:22 by adenece          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 32
 
 # include <string.h>
 # include <stdlib.h>
 # include <ctype.h>
 # include <unistd.h>
 
+char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
+int					get_next_line(int fd, char **line);
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
@@ -74,6 +77,7 @@ int					ft_iswhitespace(char c);
 void				ft_exit(int mode);
 void				ft_usage(char *name, char *usage);
 void				ft_putcstr(char *str, char c, int size, char pos);
+int					ft_status(int value);
 
 typedef struct		s_list
 {

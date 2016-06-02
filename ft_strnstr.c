@@ -6,7 +6,7 @@
 /*   By: adenece <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 09:48:52 by adenece           #+#    #+#             */
-/*   Updated: 2016/02/23 10:56:06 by adenece          ###   ########.fr       */
+/*   Updated: 2016/04/12 15:55:58 by adenece          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
-	if (!s2 || !(*s2))
-		return ((char *)s1);
 	while (*s1 && n)
 	{
 		i = 0;

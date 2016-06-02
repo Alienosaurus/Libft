@@ -6,7 +6,7 @@
 #    By: adenece <adenece@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/02/24 18:49:53 by adenece           #+#    #+#              #
-#    Updated: 2016/04/09 22:19:09 by adenece          ###   ########.fr        #
+#    Updated: 2016/05/26 15:30:19 by adenece          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	  ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c \
 	  ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c \
 	  ft_strtrim.c ft_tolower.c ft_toupper.c ft_iswhitespace.c ft_usage.c \
-	  ft_exit.c ft_putcstr.c
+	  ft_exit.c ft_putcstr.c ft_status.c
 
 all: $(NAME)
 
